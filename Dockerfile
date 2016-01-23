@@ -11,7 +11,8 @@ RUN npm install -g \
   node-red-contrib-googlechart \
   node-red-contrib-slack \
   node-red-node-suncalc \
-  node-red-contrib-freeboard
+  node-red-contrib-freeboard \
+  node-red-contrib-openzwave
 
 # We expose the node-red port so that we can access it from the host
 EXPOSE 1880
