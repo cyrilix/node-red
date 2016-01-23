@@ -12,7 +12,8 @@ RUN npm install -g \
   node-red-contrib-slack \
   node-red-node-suncalc \
   node-red-contrib-freeboard \
-  node-red-contrib-openzwave
+  node-red-contrib-openzwave \
+  node-red-contrib-mpd
 
 # We expose the node-red port so that we can access it from the host
 EXPOSE 1880
