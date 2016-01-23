@@ -12,7 +12,6 @@ RUN npm install -g \
   node-red-contrib-slack \
   node-red-node-suncalc \
   node-red-contrib-freeboard \
-  node-red-contrib-openzwave \
   node-red-contrib-mpd \
   node-red-contrib-cron
 
