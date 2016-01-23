@@ -13,7 +13,8 @@ RUN npm install -g \
   node-red-node-suncalc \
   node-red-contrib-freeboard \
   node-red-contrib-openzwave \
-  node-red-contrib-mpd
+  node-red-contrib-mpd \
+  node-red-contrib-cron
 
 # We expose the node-red port so that we can access it from the host
 EXPOSE 1880
