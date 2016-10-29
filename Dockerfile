@@ -1,5 +1,5 @@
 # The first lines of your Dockerfile should always be:
-FROM node:0.12
+FROM node:4
 MAINTAINER Leo Fidjeland (leo.fidjeland@gmail.com)
 
 WORKDIR /opt
