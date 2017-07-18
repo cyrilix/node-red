@@ -2,11 +2,27 @@
 FROM node:6
 MAINTAINER Leo Fidjeland (leo.fidjeland@gmail.com)
 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q build-essential\
+                    cmake \
+                    libudev-dev \
+                    && apt-get clean \
+                    && rm -rf /tmp/* /var/tmp/*  \
+                    && rm -rf /var/lib/apt/lists/*
+
+#Compile OpenZWave
+RUN git clone https://github.com/OpenZWave/open-zwave.git ;\
+    ln -s open-zwave open-zwave-read-only ; \
+    cd open-zwave; \
+    make; cd ..
+
 WORKDIR /opt
 # install node-red
 RUN npm install -g \
   node-red \
   # node-red-node-xmpp \ NOTE: Build fails currently.
+  node-red-node-msgpack \
+  node-red-node-base64 \
+  node-red-node-random \
   node-red-node-web-nodes \
   node-red-contrib-googlechart \
   node-red-contrib-slack \
@@ -14,7 +30,7 @@ RUN npm install -g \
   node-red-contrib-freeboard \
   node-red-contrib-mpd \
   node-red-contrib-cron \
-  node-red-node-wemo 
+  node-red-node-wemo
 
 # We expose the node-red port so that we can access it from the host
 EXPOSE 1880
