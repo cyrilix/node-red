@@ -4,10 +4,13 @@ FROM node:6
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q build-essential\
                     cmake \
                     libudev-dev \
+                    python3 \
+                    python3-pip \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install gitpython
 
 WORKDIR /opt
 # install node-red
@@ -25,7 +28,6 @@ RUN npm install -g \
   node-red-contrib-mpd \
   node-red-contrib-cron \
   node-red-node-wemo
-
 # We expose the node-red port so that we can access it from the host
 EXPOSE 1880
 
