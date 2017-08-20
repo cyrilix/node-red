@@ -1,6 +1,5 @@
 # The first lines of your Dockerfile should always be:
 FROM node:6
-MAINTAINER Leo Fidjeland (leo.fidjeland@gmail.com)
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q build-essential\
                     cmake \
