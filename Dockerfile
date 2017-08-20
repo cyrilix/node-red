@@ -9,11 +9,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q build
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
 
-#Compile OpenZWave
-RUN git clone https://github.com/OpenZWave/open-zwave.git ;\
-    ln -s open-zwave open-zwave-read-only ; \
-    cd open-zwave; \
-    make; cd ..
 
 WORKDIR /opt
 # install node-red
