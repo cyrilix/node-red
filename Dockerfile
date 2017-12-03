@@ -16,13 +16,10 @@ WORKDIR /opt
 # install node-red
 RUN npm install -g \
   node-red \
-  # node-red-node-xmpp \ NOTE: Build fails currently.
   node-red-node-msgpack \
   node-red-node-base64 \
   node-red-node-random \
   node-red-node-web-nodes \
-  node-red-contrib-googlechart \
-  node-red-contrib-slack \
   node-red-node-suncalc \
   node-red-contrib-freeboard \
   node-red-contrib-mpd \
