@@ -16,7 +16,10 @@ RUN pip3 install gitpython
 RUN git clone https://github.com/OpenZWave/open-zwave.git ;\
     ln -s open-zwave open-zwave-read-only ; \
     cd open-zwave; \
-    make; cd ..
+    make; make install; cd ..
+ENV LD_LIBRARY_PATH=/usr/local/lib64
+
+RUN npm install -g node-gyp openzwave-shared
 
 
 WORKDIR /opt
