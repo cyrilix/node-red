@@ -12,6 +12,13 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q build
 
 RUN pip3 install gitpython
 
+#Compile OpenZWave
+RUN git clone https://github.com/OpenZWave/open-zwave.git ;\
+    ln -s open-zwave open-zwave-read-only ; \
+    cd open-zwave; \
+    make; cd ..
+
+
 WORKDIR /opt
 # install node-red
 RUN npm install -g \
