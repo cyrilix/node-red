@@ -6,6 +6,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q build
                     libudev-dev \
                     python3 \
                     python3-pip \
+                    libavahi-compat-libdnssd-dev \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
@@ -17,6 +18,7 @@ WORKDIR /opt
 RUN npm install -g \
   node-red \
   node-red-node-msgpack \
+  node-red-node-discovery \
   node-red-node-base64 \
   node-red-node-random \
   node-red-node-web-nodes \
