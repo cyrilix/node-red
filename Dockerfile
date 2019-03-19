@@ -16,7 +16,7 @@ RUN pip3 install gitpython
 
 WORKDIR /opt
 # install node-red
-RUN npm install -g \
+RUN npm install -g --unsafe-perm \
   node-red \
   node-red-node-msgpack \
   node-red-node-discovery \
